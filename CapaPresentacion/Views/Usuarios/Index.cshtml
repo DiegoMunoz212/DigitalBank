@@ -1,0 +1,52 @@
+﻿@model IEnumerable<CapaPresentacion.ServiceUsuarios.UsuarioBE>
+
+@{
+    ViewBag.Title = "USUARIOS";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Crear Usuario", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>       
+            @Html.DisplayName("Id")        
+        </th>
+        <th>       
+            @Html.DisplayName("Nombre")      
+        </th>
+        <th>
+            @Html.DisplayName("Fecha Nacimiento")       
+        </th>
+        <th>
+            @Html.DisplayName("Sexo")        
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+
+        <td>
+            @Html.DisplayFor(modelItem => item.Us_id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Us_nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Us_fech_nacimiento)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Us_sexo)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Edit", new { id = item.Us_id }) |
+            @Html.ActionLink("Detalles", "Details", new { id = item.Us_id }) |
+            @Html.ActionLink("Eliminar", "Delete", new { id = item.Us_id })
+        </td>
+    </tr>
+}
+
+</table>

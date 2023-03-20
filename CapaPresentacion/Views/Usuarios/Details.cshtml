@@ -1,0 +1,43 @@
+﻿@model CapaPresentacion.ServiceUsuarios.UsuarioBE
+
+@{
+    ViewBag.Title = "DETALLES USUARIO";
+}
+
+<h2>DETALLES</h2>
+
+<div>
+    <h4>USUARIO </h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayName("Id")
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Us_id)
+        </dd>
+        <dt>
+            @Html.DisplayName("Nombre")
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Us_nombre)
+        </dd>
+        <dt>
+            @Html.DisplayName("Fecha Nacimiento")
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Us_fech_nacimiento)
+        </dd>
+        <dt>
+            @Html.DisplayName("Sexo")
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Us_sexo)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Us_id  }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
